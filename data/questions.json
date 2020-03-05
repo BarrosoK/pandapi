@@ -22,7 +22,7 @@
             "answer": "bisous"
           },
           {
-            "question": "m'enfou",
+            "question": "oui",
             "answer": ":'("
           }
         ]
@@ -32,6 +32,10 @@
         "answer": "bisous"
       }
     ]
+  },
+  {
+    "question": "non",
+    "answer": "oui"
   }
 ]
 

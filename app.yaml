@@ -1,6 +1,3 @@
-
-runtime: nodejs
-env: flex
-network:
-  forwarded_ports:
-    - 4200/tcp
+# [START runtime]
+runtime: nodejs12
+# [END runtime]
