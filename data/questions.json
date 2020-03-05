@@ -1,0 +1,37 @@
+[
+  {
+    "question": "Si je souhaite faire une demande de devis, aurais je un interlocuteur pour m’assister?",
+    "answer": "Bien entendu! Notre équipe sera ravie de vous assister par\ntéléphone au numéro suivant : 03 90 22 42 22",
+    "sub_questions": [
+      {
+        "question": "Très bien, votre service d’assistance est il basé en France?",
+        "answer": "Assurément, nous sommes tous ici, basés à\nStrasbourg!"
+      }
+    ]
+  },
+  {
+    "question": "Bonjour",
+    "answer": "coucou",
+    "sub_questions": [
+      {
+        "question": "ça va ?",
+        "answer": "oklm",
+        "sub_questions": [
+          {
+            "question": "aurevoir",
+            "answer": "bisous"
+          },
+          {
+            "question": "m'enfou",
+            "answer": ":'("
+          }
+        ]
+      },
+      {
+        "question": "aurevoir",
+        "answer": "bisous"
+      }
+    ]
+  }
+]
+
