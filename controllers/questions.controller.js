@@ -39,7 +39,8 @@ module.exports.getConversation = async (req, res) => {
     const pageSize = req.query.pageSize;
 
     const conversations = await Conversation.find({}, {_v: 0},{sort: {createdAt: order}, limit: +pageSize, skip: (+pageIndex * +pageSize)});
-    res.status(200).json(conversations);
+    const total = await Conversation.count({});
+    res.status(200).json({data: conversations, total});
 };
 
 module.exports.list = async (req, res) => {
