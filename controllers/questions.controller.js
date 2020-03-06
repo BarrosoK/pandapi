@@ -20,7 +20,7 @@ module.exports.addQuestion = async (req, res) => {
             question: req.body.question,
             answer: req.body.answer
         });
-        console.log(questions);
+        q.push(req.body.question);
     } else {
         [...req.body.path].forEach(c => path.push(+c));
         let depth = 1;
