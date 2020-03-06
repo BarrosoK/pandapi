@@ -1,16 +1,53 @@
 const {respond} = require('../utils/utils');
 const Conversation = require('../models/conversation.model');
-const questions = require('../data/questions');
+const questions = require('../data/questions.json');
+const fs = require('fs');
 
 const q = [];
 for (var k in questions) {
     q.push(questions[k].question);
 }
 
+module.exports.getAll = async (req,res) => {
+    res.status(200).json(questions);
+};
+
+module.exports.addQuestion = async (req, res) => {
+    const path = [];
+    console.log(req.body);
+    if (req.body.path === -1) {
+        questions.push({
+            question: req.body.question,
+            answer: req.body.answer
+        });
+        console.log(questions);
+    } else {
+        [...req.body.path].forEach(c => path.push(+c));
+        let depth = 1;
+        let conv = questions[path[0]];
+        while (depth < path.length && conv['sub_questions']) {
+            conv = conv['sub_questions'][path[depth]];
+            depth++;
+        }
+        console.log(conv);
+        if (!conv.sub_questions) {
+            conv.sub_questions = [];
+        }
+        conv.sub_questions.push({
+            question: req.body.question,
+            answer: req.body.answer
+        });
+    }
+
+    fs.writeFile('./data/questions.json', JSON.stringify(questions), function writeJSON(err) {
+        if (err) return console.log(err);
+    });
+    res.status(200).json('done');
+}
+
 module.exports.deleteConversationById = async (req, res) => {
-    console.log('la');
     const done = await Conversation.remove({ _id: req.params.id });
-    console.log(done);
+    //TODO: check if error
     res.status(200).json(done);
 };
 
@@ -29,6 +66,7 @@ module.exports.getConversationById = async (req, res) => {
         result.push({author: 'bot', text: conv['answer']});
         depth++;
     }
+
     res.status(200).json(result);
 };
 

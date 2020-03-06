@@ -8,6 +8,9 @@ router.get('/',
 router.post('/',
     controller.ask);
 
+router.post('/add',
+    controller.addQuestion);
+
 router.get('/conversations',
     controller.getConversation);
 
@@ -16,5 +19,8 @@ router.get('/conversation/:id',
 
 router.delete('/conversation/:id',
     controller.deleteConversationById);
+
+router.get('/all',
+    controller.getAll);
 
 module.exports = router;
