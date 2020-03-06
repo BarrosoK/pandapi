@@ -1,7 +1,0 @@
-::1 - - [05/Mar/2020:14:45:01 +0000] "POST /questions/ HTTP/1.1" 200 48
-::1 - - [05/Mar/2020:14:45:04 +0000] "POST /questions/ HTTP/1.1" 200 249
-::1 - - [05/Mar/2020:14:46:01 +0000] "POST /questions/ HTTP/1.1" 200 49
-::1 - - [05/Mar/2020:14:46:17 +0000] "POST /questions/ HTTP/1.1" 200 46
-::1 - - [05/Mar/2020:14:46:19 +0000] "POST /questions/ HTTP/1.1" 200 25
-::1 - - [05/Mar/2020:14:46:23 +0000] "POST /questions/ HTTP/1.1" 200 196
-::1 - - [05/Mar/2020:14:46:25 +0000] "POST /questions/ HTTP/1.1" 200 79
